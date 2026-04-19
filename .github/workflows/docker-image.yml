@@ -7,11 +7,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkaout Code
       uses: actions/checkout@v4
@@ -19,7 +16,7 @@ jobs:
         fetch-depth: 0
         
     -  name: docker login
-      env:
+       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASS }}
        run: |
